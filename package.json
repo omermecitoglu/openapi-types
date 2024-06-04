@@ -1,0 +1,92 @@
+{
+  "name": "@omer-x/openapi-types",
+  "version": "0.1.0",
+  "description": "TypeScript types for the OpenAPI Specification",
+  "keywords": [
+    "swagger",
+    "openapi",
+    "Specification",
+    "swagger.json",
+    "openapi.json",
+    "types",
+    "typescript",
+    "ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omermecitoglu/openapi-types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omermecitoglu/openapi-types/issues"
+  },
+  "homepage": "https://github.com/omermecitoglu/openapi-types#readme",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Omer Mecitoglu",
+    "email": "omer.mecitoglu@gmail.com",
+    "url": "https://omermecitoglu.github.io"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    },
+    "./components": {
+      "types": "./dist/components.d.ts"
+    },
+    "./example": {
+      "types": "./dist/example.d.ts"
+    },
+    "./info": {
+      "types": "./dist/info.d.ts"
+    },
+    "./link": {
+      "types": "./dist/link.d.ts"
+    },
+    "./media-type": {
+      "types": "./dist/media-type.d.ts"
+    },
+    "./operation": {
+      "types": "./dist/operation.d.ts"
+    },
+    "./parameter": {
+      "types": "./dist/parameter.d.ts"
+    },
+    "./paths": {
+      "types": "./dist/paths.d.ts"
+    },
+    "./reference": {
+      "types": "./dist/reference.d.ts"
+    },
+    "./request-body": {
+      "types": "./dist/request-body.d.ts"
+    },
+    "./response": {
+      "types": "./dist/response.d.ts"
+    },
+    "./schema": {
+      "types": "./dist/schema.d.ts"
+    },
+    "./tag": {
+      "types": "./dist/tag.d.ts"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prebuild": "ts-unused-exports tsconfig.json --excludePathsFromReport='src/index'",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@omer-x/eslint-config": "^1.0.7",
+    "eslint": "^8.57.0",
+    "ts-unused-exports": "^10.1.0",
+    "typescript": "^5.4.5"
+  }
+}
