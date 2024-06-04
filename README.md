@@ -24,10 +24,10 @@ yarn add -D @omer-x/openapi-types
 Import the types you need in your TypeScript project:
 
 ```typescript
-import { OpenAPIObject, InfoObject, PathsObject } from '@omer-x/openapi-types';
+import { OpenApiDocument } from '@omer-x/openapi-types';
 
 // Example usage
-const openApiSpec: OpenAPIObject = {
+const openApiSpec: OpenApiDocument = {
   openapi: "3.1.0",
   info: {
     title: "Sample API",
