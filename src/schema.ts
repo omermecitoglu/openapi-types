@@ -24,6 +24,7 @@ type Schema = {
    */
   nullable?: boolean,
   oneOf?: SchemaObject[],
+  anyOf?: SchemaObject[],
 };
 
 type ObjectSchema = {
