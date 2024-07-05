@@ -6,14 +6,14 @@ import type { ReferenceObject } from "./reference";
 import type { RequestBodyObject } from "./request-body";
 import type { ResponseObject } from "./response";
 import type { SchemaObject } from "./schema";
+import type { SecuritySchemeObject } from "./security-scheme";
 
 type HeaderObject = unknown;
-type SecuritySchemeObject = unknown;
 type CallbackObject = unknown;
 
 /**
-* Holds a set of reusable objects for different aspects of the OAS. All objects defined within the components object will have no effect on the API unless they are explicitly referenced from properties outside the components object.
-*/
+ * Holds a set of reusable objects for different aspects of the OAS. All objects defined within the components object will have no effect on the API unless they are explicitly referenced from properties outside the components object.
+ */
 export type ComponentsObject = {
   /**
    * An object to hold reusable Schema Objects.
