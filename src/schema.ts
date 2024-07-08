@@ -37,7 +37,7 @@ type ObjectSchema = {
    * By default, all object properties are optional. You can specify the required properties in the required list
    */
   required?: string[],
-  additionalProperties?: Record<string, SchemaObject> | ReferenceObject | false,
+  additionalProperties?: SchemaObject | ReferenceObject | boolean,
   minProperties?: number,
   maxProperties?: number,
 };
