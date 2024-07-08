@@ -32,7 +32,7 @@ type ObjectSchema = {
   /**
    * An object is a collection of property/value pairs. The properties keyword is used to define the object properties – you need to list the property names and specify a schema for each property.
    */
-  properties: Record<string, SchemaObject>,
+  properties?: Record<string, SchemaObject>,
   /**
    * By default, all object properties are optional. You can specify the required properties in the required list
    */
