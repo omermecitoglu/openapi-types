@@ -30,6 +30,7 @@
     "url": "https://omermecitoglu.github.io"
   },
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -87,8 +88,8 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@omer-x/eslint-config": "^1.0.7",
-    "eslint": "^8.57.0",
+    "@omer-x/eslint-config": "^2.0.2",
+    "eslint": "^9.13.0",
     "semantic-release": "^24.2.0",
     "ts-unused-exports": "^10.1.0",
     "typescript": "^5.5.3"
