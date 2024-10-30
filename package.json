@@ -1,6 +1,6 @@
 {
   "name": "@omer-x/openapi-types",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "TypeScript types for the OpenAPI Specification",
   "keywords": [
     "swagger",
@@ -71,6 +71,9 @@
     },
     "./schema": {
       "types": "./dist/schema.d.ts"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts"
     },
     "./tag": {
       "types": "./dist/tag.d.ts"

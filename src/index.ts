@@ -1,6 +1,7 @@
 import type { ComponentsObject } from "./components";
 import type { InfoObject } from "./info";
 import type { PathsObject } from "./paths";
+import { ServerObject } from "./server";
 import type { TagObject } from "./tag";
 
 type AtLeastOne<T, U = { [K in keyof T]: Pick<T, K> }> = Partial<T> & U[keyof U];
@@ -24,7 +25,7 @@ export type OpenApiDocument = {
   /**
    * An array of Server Objects, which provide connectivity information to a target server. If the servers property is not provided, or is an empty array, the default value would be a Server Object with a url value of /.
    */
-  servers?: unknown,
+  servers?: ServerObject[],
   /**
    * The available paths and operations for the API.
    */
