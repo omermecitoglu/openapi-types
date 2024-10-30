@@ -1,6 +1,7 @@
 import type { ComponentsObject } from "./components";
 import type { InfoObject } from "./info";
 import type { PathsObject } from "./paths";
+import type { SecurityRequirementObject } from "./security-requirement";
 import type { ServerObject } from "./server";
 import type { TagObject } from "./tag";
 
@@ -41,7 +42,7 @@ export type OpenApiDocument = {
   /**
    * A declaration of which security mechanisms can be used across the API. The list of values includes alternative security requirement objects that can be used. Only one of the security requirement objects need to be satisfied to authorize a request. Individual operations can override this definition. To make security optional, an empty security requirement ({}) can be included in the array.
    */
-  security?: unknown,
+  security?: SecurityRequirementObject[],
   /**
    * A list of tags used by the document with additional metadata. The order of the tags can be used to reflect on their order by the parsing tools. Not all tags that are used by the Operation Object must be declared. The tags that are not declared MAY be organized randomly or based on the tools' logic. Each tag name in the list MUST be unique.
    */

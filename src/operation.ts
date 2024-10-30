@@ -2,6 +2,7 @@ import type { ParameterObject } from "./parameter";
 import type { ReferenceObject } from "./reference";
 import type { RequestBodyObject } from "./request-body";
 import type { ResponsesObject } from "./response";
+import type { SecurityRequirementObject } from "./security-requirement";
 
 /**
  * Describes a single API operation on a path.
@@ -50,7 +51,7 @@ export type OperationObject = {
   /**
    * A declaration of which security mechanisms can be used for this operation. The list of values includes alternative security requirement objects that can be used. Only one of the security requirement objects need to be satisfied to authorize a request. To make security optional, an empty security requirement ({}) can be included in the array. This definition overrides any declared top-level security. To remove a top-level security declaration, an empty array can be used.
    */
-  security?: unknown,
+  security?: SecurityRequirementObject[],
   /**
    * An alternative server array to service this operation. If an alternative server object is specified at the Path Item Object or Root level, it will be overridden by this value.
    */
