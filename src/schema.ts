@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @stylistic/indent */
-
 import type { ReferenceObject } from "./reference";
 
 type Schema = {
