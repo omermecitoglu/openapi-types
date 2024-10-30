@@ -1,7 +1,7 @@
 import type { ComponentsObject } from "./components";
 import type { InfoObject } from "./info";
 import type { PathsObject } from "./paths";
-import { ServerObject } from "./server";
+import type { ServerObject } from "./server";
 import type { TagObject } from "./tag";
 
 type AtLeastOne<T, U = { [K in keyof T]: Pick<T, K> }> = Partial<T> & U[keyof U];

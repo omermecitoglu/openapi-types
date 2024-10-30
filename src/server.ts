@@ -11,9 +11,9 @@ export type ServerObject = {
    * A map between a variable name and its value. The value is used for substitution in the server's URL template.
    */
   variables?: Record<string, ServerVariableObject>,
-}
+};
 
-export type ServerVariableObject = {
+type ServerVariableObject = {
   /**
    * An enumeration of string values to be used if the substitution options are from a limited set. The array MUST NOT be empty.
    */
@@ -26,4 +26,4 @@ export type ServerVariableObject = {
    * An optional description for the server variable. CommonMark syntax MAY be used for rich text representation.
    */
   description: string,
-}
+};
