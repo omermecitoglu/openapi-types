@@ -1,6 +1,6 @@
 {
   "name": "@omer-x/openapi-types",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "TypeScript types for the OpenAPI Specification",
   "keywords": [
     "swagger",
@@ -89,6 +89,7 @@
   "devDependencies": {
     "@omer-x/eslint-config": "^1.0.7",
     "eslint": "^8.57.0",
+    "semantic-release": "^24.2.0",
     "ts-unused-exports": "^10.1.0",
     "typescript": "^5.5.3"
   }
