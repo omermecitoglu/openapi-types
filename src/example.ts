@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-export type ExampleObject = {
+export type ExampleObject<T = unknown> = {
   /**
    * Short description for the example.
    */
@@ -12,7 +10,7 @@ export type ExampleObject = {
   /**
    * Embedded literal example. The value field and externalValue field are mutually exclusive. To represent examples of media types that cannot naturally represented in JSON or YAML, use a string value to contain the example, escaping where necessary.
    */
-  value?: any,
+  value?: T,
   /**
    * A URI that points to the literal example. This provides the capability to reference examples that cannot easily be included in JSON or YAML documents. The value field and externalValue field are mutually exclusive. See the rules for resolving Relative References.
    */
