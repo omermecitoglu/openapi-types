@@ -66,9 +66,9 @@ type IntegerSchema = {
   type: "integer",
   format?: "int32" | "int64",
   minimum?: number,
-  exclusiveMinimum?: boolean,
+  exclusiveMinimum?: number,
   maximum?: number,
-  exclusiveMaximum?: boolean,
+  exclusiveMaximum?: number,
   default?: number,
   multipleOf?: number,
 };
