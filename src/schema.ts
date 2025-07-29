@@ -86,9 +86,15 @@ type UnknownSchema = {
   type?: undefined,
 };
 
+type UnionSchema = {
+  type: (keyof TypeSpecifics)[],
+} & {
+  [T in keyof TypeSpecifics]: TypeSpecifics[T];
+}[keyof TypeSpecifics];
+
 /**
  * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 2020-12.
  */
-export type SchemaObject = Schema & {
+export type SchemaObject = Schema & ({
   [T in keyof TypeSpecifics]: { type: T } & TypeSpecifics[T];
-}[keyof TypeSpecifics] | (ReferenceObject & UnknownSchema);
+}[keyof TypeSpecifics] | UnionSchema) | (ReferenceObject & UnknownSchema);
