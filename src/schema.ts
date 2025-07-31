@@ -75,7 +75,8 @@ type IntegerSchema = {
 
 type ArraySchema = {
   type: "array",
-  items: SchemaObject | SchemaObject[],
+  items?: SchemaObject,
+  prefixItems?: SchemaObject[],
   minItems?: number,
   maxItems?: number,
   uniqueItems?: boolean,
