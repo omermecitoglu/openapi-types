@@ -24,71 +24,63 @@ type Schema = {
   anyOf?: SchemaObject[],
 };
 
-type ObjectSchema = {
-  type: "object",
-  /**
-   * An object is a collection of property/value pairs. The properties keyword is used to define the object properties – you need to list the property names and specify a schema for each property.
-   */
-  properties?: Record<string, SchemaObject>,
-  /**
-   * By default, all object properties are optional. You can specify the required properties in the required list
-   */
-  required?: string[],
-  additionalProperties?: SchemaObject | ReferenceObject | boolean,
-  minProperties?: number,
-  maxProperties?: number,
-};
+type TypeSpecifics = {
+  object: {
+    /**
+     * An object is a collection of property/value pairs. The properties keyword is used to define the object properties – you need to list the property names and specify a schema for each property.
+     */
+    properties?: Record<string, SchemaObject>,
+    /**
+     * By default, all object properties are optional. You can specify the required properties in the required list
+     */
+    required?: string[],
+    additionalProperties?: SchemaObject | ReferenceObject | boolean,
+    minProperties?: number,
+    maxProperties?: number,
+  },
 
-type StringSchema = {
-  type: "string",
-  format?: "date" | "date-time" | "password" | "byte" | "binary" | "email" | "uuid" | "uri" | "hostname" | "ipv4" | "ipv6",
-  contentMediaType?: string,
-  contentEncoding?: "base16" | "base32" | "base64" | "base64url",
-  pattern?: string,
-  default?: string,
-  enum?: string[],
-  minLength?: number,
-  maxLength?: number,
-};
+  string: {
+    format?: "date" | "date-time" | "password" | "byte" | "binary" | "email" | "uuid" | "uri" | "hostname" | "ipv4" | "ipv6",
+    contentMediaType?: string,
+    contentEncoding?: "base16" | "base32" | "base64" | "base64url",
+    pattern?: string,
+    default?: string,
+    enum?: string[],
+    minLength?: number,
+    maxLength?: number,
+  },
 
-type NumberSchema = {
-  type: "number",
-  format?: "float" | "double",
-  minimum?: number,
-  exclusiveMinimum?: number,
-  maximum?: number,
-  exclusiveMaximum?: number,
-  default?: number,
-  multipleOf?: number,
-};
+  number: {
+    format?: "float" | "double",
+    minimum?: number,
+    exclusiveMinimum?: number,
+    maximum?: number,
+    exclusiveMaximum?: number,
+    default?: number,
+    multipleOf?: number,
+  },
 
-type IntegerSchema = {
-  type: "integer",
-  format?: "int32" | "int64",
-  minimum?: number,
-  exclusiveMinimum?: number,
-  maximum?: number,
-  exclusiveMaximum?: number,
-  default?: number,
-  multipleOf?: number,
-};
+  integer: {
+    format?: "int32" | "int64",
+    minimum?: number,
+    exclusiveMinimum?: number,
+    maximum?: number,
+    exclusiveMaximum?: number,
+    default?: number,
+    multipleOf?: number,
+  },
 
-type ArraySchema = {
-  type: "array",
-  items?: SchemaObject,
-  prefixItems?: SchemaObject[],
-  minItems?: number,
-  maxItems?: number,
-  uniqueItems?: boolean,
-};
+  array: {
+    items?: SchemaObject,
+    prefixItems?: SchemaObject[],
+    minItems?: number,
+    maxItems?: number,
+    uniqueItems?: boolean,
+  },
 
-type NullSchema = {
-  type: "null",
-};
-
-type BooleanSchema = {
-  type: "boolean",
-};
+  null: object,
+  boolean: object,
+}
 
 type UnknownSchema = {
   type?: undefined,
@@ -97,12 +89,6 @@ type UnknownSchema = {
 /**
  * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 2020-12.
  */
-export type SchemaObject = Schema & (
-  ObjectSchema |
-  StringSchema |
-  NumberSchema |
-  IntegerSchema |
-  ArraySchema |
-  NullSchema |
-  BooleanSchema
-) | (ReferenceObject & UnknownSchema);
+export type SchemaObject = Schema & {
+  [T in keyof TypeSpecifics]: { type: T } & TypeSpecifics[T];
+}[keyof TypeSpecifics] | (ReferenceObject & UnknownSchema);
