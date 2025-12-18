@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ExampleObject } from "./example";
 import type { ReferenceObject } from "./reference";
-import type { SchemaObject } from "./schema";
+import type { SchemaObject } from "@omer-x/json-schema-types";
 
 /**
  * Each Media Type Object provides schema and examples for the media type identified by its key.

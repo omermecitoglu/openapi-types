@@ -5,8 +5,8 @@ import type { PathItemObject } from "./paths";
 import type { ReferenceObject } from "./reference";
 import type { RequestBodyObject } from "./request-body";
 import type { ResponseObject } from "./response";
-import type { SchemaObject } from "./schema";
 import type { SecuritySchemeObject } from "./security-scheme";
+import type { SchemaObject } from "@omer-x/json-schema-types";
 
 type HeaderObject = unknown;
 type CallbackObject = unknown;
