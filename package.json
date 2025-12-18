@@ -87,6 +87,9 @@
     "prebuild": "ts-unused-exports tsconfig.json --excludePathsFromReport='src/index'",
     "build": "tsc"
   },
+  "peerDependencies": {
+    "@omer-x/json-schema-types": "^1"
+  },
   "devDependencies": {
     "@omer-x/eslint-config": "^2.2.6",
     "eslint": "^9.39.2",
